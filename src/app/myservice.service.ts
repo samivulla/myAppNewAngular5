@@ -15,6 +15,7 @@ const httpOptions = {
 export class MyserviceService {
   private _url: string = "https://api.myjson.com/bins/14638t";
   private _url1: string = "https://api.myjson.com/bins/p41ct";
+  private _url2: string ="https://api.myjson.com/bins/1bln4b";
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any>{
@@ -25,6 +26,10 @@ export class MyserviceService {
   }
   getReverseData(){
     return this.getAllData();
+  }
+
+  getMyData(): Observable<ITests[]>{
+    return this.http.get<ITests[]>(this._url2);
   }
 
 }

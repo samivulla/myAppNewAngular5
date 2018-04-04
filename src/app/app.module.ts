@@ -7,18 +7,20 @@ import { AppRoutingModule } from './/app-routing.module';
 import { AboutComponent } from './about/about.component';
 import { SoftdevelpComponent } from './softdevelp/softdevelp.component';
 // import { WebdesignComponent } from './webdesign/webdesign.component';
-import { MobileappComponent } from './mobileapp/mobileapp.component';
+//import { MobileappComponent } from './mobileapp/mobileapp.component';
 // import { SoftwareTestingComponent } from './software-testing/software-testing.component';
 // import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     SoftdevelpComponent,
+    InputComponent,
     // WebdesignComponent,
-    MobileappComponent,
+    // MobileappComponent,
     // SoftwareTestingComponent,
     // LoginComponent
   ],
@@ -26,7 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     HttpClientModule,  
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

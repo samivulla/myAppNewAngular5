@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MyserviceService } from '../myservice.service';
 
 @Component({
   selector: 'app-webdesign',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WebdesignComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private service: MyserviceService) { }
+  public myData: any = [];
+  private myElement:number;
   ngOnInit() {
+    this.myElement = 20;
+  }
+
+  btnClick() {
+    this.service.getMyData()
+      .subscribe(data => this.myData = data);
+      this.myElement = 30; 
+  }
+
+  ngDoCheck() {
+    console.log(this.myData);
+    console.log(this.myElement);
   }
 
 }
