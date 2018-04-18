@@ -1,7 +1,6 @@
 <!------header------>
-<header class="container-fluid">
-  <div class="row">
-    <nav class="navbar navbar-default">
+<header>
+  <!-- <nav class="navbar navbar-default">
       <div class="container-fluid">
 
         <div class="navbar-header">
@@ -16,18 +15,17 @@
           </a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+       
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
               <a routerLink="/about">About Us</a>
             </li>
-            <!-- <li><a href="about.html">About Us</a></li> -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services</a>
               <ul class="dropdown-menu">
                 <li>
-                  <a routerLink="/softdevp">Software Development</a>
+                  <a routerLink="/softdevp/{{'samiiiiiii'}}">Software Development</a>
                 </li>
                 <li>
                   <a routerLink="/webdesign">Web Design</a>
@@ -38,11 +36,6 @@
                 <li>
                   <a routerLink="/softtesting">Software Testing</a>
                 </li>
-
-                <!-- <li><a href="soft-dev.html">Software Development</a></li>
-       <li><a href="web-design.html">Web Design</a></li>
-       <li><a href="mobile-app.html">Mobile Apps</a></li>
-       <li><a href="soft- testing.html">Software Testing</a></li> -->
 
               </ul>
             </li>
@@ -55,7 +48,97 @@
           </ul>
         </div>
       </div>
-    </nav>
-  </div>
+    </nav> -->
+  <!-- <button mat-button>My Button</button> -->
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Drucare</span>
+      <span class="example-spacer"></span>
+      <button mat-button>Login</button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened="true">
+      <div class="example-sidenav-content">
+        <ul>
+          <li *ngFor="let opt of opts">
+            {{ opt.text }}
+          </li>
+        </ul>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="patientForm">
+        <form [formGroup]="UserForm" class="inputs_align" (ngSubmit)="submit()">
+          <div class="col-md-3">
+            <div>
+              <label>Header</label>
+              <input type="text" class="form-control" formControlName="notificationSubject">
+              <div *ngIf="!UserForm.controls['notificationSubject'].valid && (UserForm.controls['notificationSubject'].touched)">
+                <div [hidden]="!UserForm.controls['notificationSubject'].errors.required">
+                  Header is Required
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-md-3">
+            <div>
+              <label>Version</label>
+              <input type="text" class="form-control" formControlName="applicationVersion">
+              <div *ngIf="!UserForm.controls['applicationVersion'].valid && (UserForm.controls['applicationVersion'].touched)">
+                <div [hidden]="!UserForm.controls['applicationVersion'].errors.required">
+                  Version is Required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <label>Description</label>
+              <textarea class="form-control" rows="1" formControlName="description"></textarea>
+              <div *ngIf="!UserForm.controls['description'].valid && (UserForm.controls['description'].touched)">
+                <div [hidden]="!UserForm.controls['description'].errors.required">
+                  Description is Required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <label>Select Module</label>
+              <select formControlName="modId" class="form-control">
+                <option *ngFor="let module of modules" [value]="module">{{module}}</option>
+              </select>
+              <div *ngIf="!UserForm.controls['modId'].valid && (UserForm.controls['modId'].touched)">
+                <div [hidden]="!UserForm.controls['modId'].errors.required">
+                  Module is Required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <label>Add Features</label>
+              <textarea class="form-control" rows="1" formControlName="featureDescription"></textarea>
+              <div *ngIf="!UserForm.controls['featureDescription'].valid && (UserForm.controls['featureDescription'].touched)">
+                <div [hidden]="!UserForm.controls['featureDescription'].errors.required">
+                  Feature is Required
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-1 margin-tp">
+            <mat-icon (click)="addDescription(UserForm.modId)">add circle</mat-icon>
+          </div>
+
+          <button mat-raised-button class="button-align" color="primary" type="submit" [disabled]="!UserForm.valid">Submit</button>
+          <!-- <button type="submit" [disabled]="!UserForm.valid">Submit</button> -->
+
+        </form>
+      </div>
+      <!-- <router-outlet></router-outlet> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </header>
-<router-outlet></router-outlet>

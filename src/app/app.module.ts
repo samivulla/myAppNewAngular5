@@ -12,13 +12,16 @@ import { SoftdevelpComponent } from './softdevelp/softdevelp.component';
 // import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputComponent } from './input/input.component';
-
+import { MaterialModule } from './app.material.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     SoftdevelpComponent,
     InputComponent,
+
     // WebdesignComponent,
     // MobileappComponent,
     // SoftwareTestingComponent,
@@ -26,9 +29,12 @@ import { InputComponent } from './input/input.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,  
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    NgSelectModule
   ],
   providers: [MyserviceService],
   bootstrap: [AppComponent]

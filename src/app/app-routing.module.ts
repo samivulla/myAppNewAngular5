@@ -7,9 +7,9 @@ import { MobileappComponent } from './mobileapp/mobileapp.component';
 import { SoftwareTestingComponent } from './software-testing/software-testing.component';
 import { LoginComponent } from './login/login.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/about', pathMatch: 'full' },
+  // { path: 'about', redirectTo: '/about', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
-  { path: 'softdevp', component: SoftdevelpComponent },
+  { path: 'softdevp/:id', component: SoftdevelpComponent },
   {
     path: 'webdesign',
     //  component: WebdesignComponent

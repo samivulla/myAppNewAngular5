@@ -16,6 +16,7 @@ export class MyserviceService {
   private _url: string = "https://api.myjson.com/bins/14638t";
   private _url1: string = "https://api.myjson.com/bins/p41ct";
   private _url2: string ="https://api.myjson.com/bins/1bln4b";
+  
   constructor(private http: HttpClient) { }
 
   getData(): Observable<any>{
@@ -30,6 +31,10 @@ export class MyserviceService {
 
   getMyData(): Observable<ITests[]>{
     return this.http.get<ITests[]>(this._url2);
+  }
+
+  getWhatsNewData(obj): Observable<any>{
+    return this.http.post("http://49.207.6.227:8040/login/saveNotification",obj);
   }
 
 }
