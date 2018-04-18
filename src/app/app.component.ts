@@ -14,14 +14,14 @@ import { Subscription } from 'rxjs/Subscription';
 export class AppComponent implements OnInit {
   public testArry: any = [];
   public test2Arry: any = [];
-  private person: any = [];
+  public person: any = [];
   public opts: any = [];
   public obj: {};
   public personn: {};
   public notificationsFeaturesBeans: any = [];
 
   public modules = ['Admin', 'Registration', 'Emr'];
-  private formChangesSubscription: Subscription;
+  public formChangesSubscription: Subscription;
 
 
   UserForm: FormGroup
