@@ -11,7 +11,7 @@ export class WebdesignComponent implements OnInit {
 
   constructor(private service: MyserviceService) { }
   public myData: any = [];
-  private myElement:number;
+  public myElement:number;
   ngOnInit() {
     this.myElement = 20;
   }

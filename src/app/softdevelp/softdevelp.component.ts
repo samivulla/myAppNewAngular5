@@ -7,9 +7,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SoftdevelpComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-  private myData: string;
-  private useData: string;
+  constructor(public route: ActivatedRoute) { }
+  public myData: string;
+  public useData: string;
   ngOnInit() {
     this.myData = "testing Input and output";
     const id = this.route.snapshot.paramMap.get('id');
