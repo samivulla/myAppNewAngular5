@@ -1,32 +1,21 @@
 
-.img-responsive{
-    margin-top: -12px;
-    width: 137px;
-}
+
 /* .example-icon {
     padding: 0 14px;
   } */
-  
+  .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
   .example-spacer {
     flex: 1 1 auto;
-  }
-
-  .inputs_align {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .example-button-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
   }
   .example-sidenav-content{
     display: flex;
     width:150px;
   align-items: center;
-  }
-  .button-align{
-    margin-top: 25px;
   }
   .example-container {
     width:100%;
@@ -38,14 +27,4 @@
     min-width: 260px;
     background-color: #fafafa;
   }
-  .patientForm {
-    margin: 10px 25px;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 15px;
-    height:75%;
-    /* padding-bottom: 50px; */
-}
-.margin-tp {
-  margin-top: 26px;
-}
+ 

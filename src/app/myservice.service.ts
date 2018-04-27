@@ -32,9 +32,12 @@ export class MyserviceService {
   getMyData(): Observable<ITests[]>{
     return this.http.get<ITests[]>(this._url2);
   }
-
   getWhatsNewData(obj): Observable<any>{
     return this.http.post("http://49.207.6.227:8040/login/saveNotification",obj);
+  }
+
+  getModulesNames(obj): Observable<Array<any>>{
+    return this.http.post<Array<any>>("http://49.207.6.227:8040/login/fetchModules",obj);
   }
 
 }

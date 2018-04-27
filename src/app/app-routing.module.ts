@@ -6,8 +6,14 @@ import { WebdesignComponent } from './webdesign/webdesign.component';
 import { MobileappComponent } from './mobileapp/mobileapp.component';
 import { SoftwareTestingComponent } from './software-testing/software-testing.component';
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { WhatsNewComponent } from './whats-new/whats-new.component';
+import { RegistrationComponent } from './registration/registration.component';
 const routes: Routes = [
-  // { path: 'about', redirectTo: '/about', pathMatch: 'full' },
+  { path: '', redirectTo: '/whatsnew', pathMatch: 'full' },
+  { path: 'whatsnew', component: WhatsNewComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'registration', component: RegistrationComponent },
   { path: 'about', component: AboutComponent },
   { path: 'softdevp/:id', component: SoftdevelpComponent },
   {

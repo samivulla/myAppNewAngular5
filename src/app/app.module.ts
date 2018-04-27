@@ -15,12 +15,18 @@ import { InputComponent } from './input/input.component';
 import { MaterialModule } from './app.material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AdminComponent } from './admin/admin.component';
+import { WhatsNewComponent } from './whats-new/whats-new.component';
+import { RegistrationComponent } from './registration/registration.component';
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     SoftdevelpComponent,
     InputComponent,
+    AdminComponent,
+    WhatsNewComponent,
+    RegistrationComponent,
 
     // WebdesignComponent,
     // MobileappComponent,

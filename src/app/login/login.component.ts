@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
+import { FormGroup, FormBuilder,FormControl, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,12 +10,22 @@ import { MyserviceService } from '../myservice.service';
 export class LoginComponent implements OnInit {
 public getServiceData:Array<any> = [];
 
-  constructor(private _service:MyserviceService) { }
+
+loginForm: FormGroup
+  constructor(private _service:MyserviceService, private fb:FormBuilder) {
+    this.createForm();
+   }
 
   ngOnInit() {
-   
+   console.log(this.loginForm);
   }
-  onSubmit(){
-    console.log("hiihi");
+  createForm(){
+    this.loginForm = this.fb.group({
+      username : [''],
+      password:['']
+    })
+  }
+  loginSUbmit(){
+    console.log(this.loginForm);
   }
 }

@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 @NgModule({
     imports:[
         LoginRouterModule,
@@ -14,7 +15,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
         MatInputModule,
         MatFormFieldModule,
         MatCardModule,
-        MatGridListModule],
+        MatGridListModule,
+        FormsModule,
+        ReactiveFormsModule],
     exports:[LoginRouterModule],
     declarations:[LoginComponent]
 })

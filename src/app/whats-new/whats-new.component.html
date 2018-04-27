@@ -1,0 +1,71 @@
+<h5>WhatsNew</h5>
+<div class="outerDivDesign">
+  <form [formGroup]="UserForm" class="inputs_align" (ngSubmit)="submit()">
+    <div class="col-md-3">
+      <div>
+        <label>Header</label>
+        <input type="text" class="form-control" formControlName="notificationSubject">
+        <div *ngIf="!UserForm.controls['notificationSubject'].valid && (UserForm.controls['notificationSubject'].touched)">
+          <div [hidden]="!UserForm.controls['notificationSubject'].errors.required">
+            Header is Required
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <div>
+        <label>Version</label>
+        <input type="text" class="form-control" formControlName="applicationVersion">
+        <div *ngIf="!UserForm.controls['applicationVersion'].valid && (UserForm.controls['applicationVersion'].touched)">
+          <div [hidden]="!UserForm.controls['applicationVersion'].errors.required">
+            Version is Required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div>
+        <label>Description</label>
+        <textarea class="form-control" rows="1" formControlName="description"></textarea>
+        <div *ngIf="!UserForm.controls['description'].valid && (UserForm.controls['description'].touched)">
+          <div [hidden]="!UserForm.controls['description'].errors.required">
+            Description is Required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div>
+        <label>Select Module</label>
+        <select formControlName="modId" class="form-control">
+          <option *ngFor="let module of modules.data" [value]="module.moduleId">{{module.moduleName}}</option>
+        </select>
+        <div *ngIf="!UserForm.controls['modId'].valid && (UserForm.controls['modId'].touched)">
+          <div [hidden]="!UserForm.controls['modId'].errors.required">
+            Module is Required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div>
+        <label>Add Features</label>
+        <textarea class="form-control" rows="1" formControlName="featureDescription"></textarea>
+        <div *ngIf="!UserForm.controls['featureDescription'].valid && (UserForm.controls['featureDescription'].touched)">
+          <div [hidden]="!UserForm.controls['featureDescription'].errors.required">
+            Feature is Required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1 margin-tp">
+      <mat-icon (click)="addDescription()">add circle</mat-icon>
+    </div>
+
+    <button mat-raised-button class="button-align" color="primary" type="submit" [disabled]="!UserForm.valid">Submit</button>
+    <!-- <button type="submit" [disabled]="!UserForm.valid">Submit</button> -->
+
+  </form>
+</div>
